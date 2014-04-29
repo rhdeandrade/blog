@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="blog">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
 	<title>R's Blog</title>
 	<meta name="generator" content="Bootply" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
 
 	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -17,13 +16,13 @@
 
 <body  >
 
-	<div class="wrapper">
+	<div class="wrapper" >
 		<div class="box">
 			<div class="row">
 
 				<!-- sidebar -->
 				<div class="column col-sm-3 has-background" id="sidebar">
-					<%= link_to 'R', root_path, :class => "logo", remote: true %>
+					<%= link_to 'R', root_path, :class => "logo", remote: true, id: "home_link" %>
 					<ul class="nav">
 						<li class="active"><a href="#featured">Featured</a>
 						</li>
@@ -55,8 +54,8 @@
 				<div class="column col-sm-9" id="main">
 					<div class="padding">
 						<div class="full col-sm-9">
-							<div class="col-sm-12" id="featured">   
-								<%= yield %>
+							<div class="col-sm-12" id="featured" ng-view>
+								<!-- Here the magic begins -->
 							</div>
 						</div>
 					</div><!-- /padding -->

@@ -16,3 +16,12 @@
 //= require ckeditor/override
 //= require ckeditor/init
 //= require_tree .
+
+angular.module('blog', ['ngRoute']).config(function ($routeProvider) {
+   $routeProvider
+	.when('/', { templateUrl: 'html/index.html'});
+})
+	.controller('postsController', function($scope) {
+		$scope.posts = 2;
+
+	});
